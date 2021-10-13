@@ -1,3 +1,3 @@
 class Subscribable {
-    observers = new Set()
+  observers = new Set();
 }
