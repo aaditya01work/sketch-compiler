@@ -1,39 +1,39 @@
 class Observer {
-  username = "";
+    username = ''
 
-  constructor(username) {
-    this.username = username;
-  }
+    constructor(username) {
+        this.username = username
+    }
 
-  setUsername(username) {
-    this.username = username;
-  }
+    setUsername(username) {
+        this.username = username
+    }
 
-  getUsername() {
-    return this.username;
-  }
+    getUsername() {
+        return this.username
+    }
 }
 
 class Subscribable {
-  observers = new Set();
+    observers = new Set()
 
-  subscribe(observer) {
-    this.observers.add(observer);
-  }
-
-  notify() {
-    for (let observer of this.observers) {
-      console.log(`username: ${observer.username}`);
+    subscribe(observer) {
+        this.observers.add(observer)
     }
-  }
+
+    notify() {
+        for (let observer of this.observers) {
+            console.log(`username: ${observer.username}`)
+        }
+    }
 }
 
-let observerA = new Observer("aditya");
-let observerB = new Observer("good example");
+let observerA = new Observer('aditya')
+let observerB = new Observer('good example')
 
-let subscriberFactory = new Subscribable();
+let subscriberFactory = new Subscribable()
 
-subscriberFactory.subscribe(observerA);
-subscriberFactory.subscribe(observerB);
+subscriberFactory.subscribe(observerA)
+subscriberFactory.subscribe(observerB)
 
-subscriberFactory.notify();
+subscriberFactory.notify()
